@@ -8,6 +8,7 @@
       <li><router-link to="/Demo3"> demo3_Data</router-link></li>
       <li><router-link to="/Demo4"> demo4_Compute</router-link></li>
       <li><router-link to="/Demo5"> demo5_Binding</router-link></li>
+      <li><router-link to="/Demo6"> demo6_Binding</router-link></li>
     </ul>
 
     <!-- router-view ใช้พื่อให้สามารถแสดงเนื้อหาตาม path ที่ตั้งเอาไว้ใน route  -->
