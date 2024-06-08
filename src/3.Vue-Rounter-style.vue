@@ -1,39 +1,47 @@
 <template>
   <div id="demo1">
     <h1>DemoRoute</h1>
-    <ul class="Navigator">
-      <li><router-link to="/"> Home</router-link></li>
-      <li><router-link to="/Demo1"> demo1_Route</router-link></li>
-      <li><router-link to="/Demo2"> demo2_Event</router-link></li>
-      <li><router-link to="/Demo3"> demo3_Data</router-link></li>
-      <li><router-link to="/Demo4"> demo4_Compute</router-link></li>
-      <li><router-link to="/Demo5"> demo5_Binding</router-link></li>
-      <li><router-link to="/Demo6"> demo6_Binding</router-link></li>
-    </ul>
 
-    <!-- router-view ใช้พื่อให้สามารถแสดงเนื้อหาตาม path ที่ตั้งเอาไว้ใน route  -->
-    <router-view></router-view>
+    <Header />
+    <Content />
+    <!-- Prop sending  -->
+    <!-- @onClock คือ event ที่เราสร้างขึ้นเองเพื่อจะรับ data มาจาก child component โดยให้มันส่งเข้าไปใน function onClock -->
+    <Footer @onClock="onClock" title="CopyRight 2024" textColor="red" />
+    <span>{{ time }}</span>
   </div>
 </template>
 
 <script>
+import Header from "./components/layout/Header.vue";
+import Content from "./components/layout/Content.vue";
+import Footer from "./components/layout/Footer.vue";
+import moment from "moment";
+
 export default {
   name: "demoRoute",
+  data() {
+    return {
+      time: "",
+    };
+  },
+  methods: {
+    onClock(value) {
+      // this.time = value;
+      this.time = moment(value).format("MM/DD/YYYY hh:mm:ss");
+    },
+  },
+
+  //  การเรียก child component
+  components: {
+    Header,
+    Content,
+    Footer,
+  },
 };
 </script>
 
 <!-- style scoped  กำหนดให้เป็น style แบบ local-->
-<style scoped>
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline;
-  margin: 50px;
-}
-</style>
+<style></style>
 
 <!-- * ใช้ร่วมกับ folder router และ views(component of pages)-->
 

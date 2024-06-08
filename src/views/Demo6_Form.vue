@@ -1,6 +1,8 @@
 <template>
   <h1>Demo6_Form</h1>
 
+  <!-- Modifier คือ . หลัง event หรือ directive  คือ ตัวปรับแต่งแบบ shortcut เช่น [ .prevent .trim .lazy .number ]  -->
+  <!-- Modifier .lazy เมื่อ user focus ที่ input อื่น หรือกด enter ถึงจะเอาค่ามาใส่ในผลลัพธ์ ช่วยให้ไม่ต้องเก็บซ้ำๆ-->
   <!-- submit.prevent เป็น shortcut ในการสร้าง event.preventDefault()-->
   <form @submit.prevent="submit">
     <!-- First Name -->
@@ -27,6 +29,13 @@
       <!-- idแทนด้วย v-model -->
     </div>
 
+    <div>
+      <label for="age">Age</label>
+      <input type="number" name="age" v-model="applicant.age" />
+      <!-- OR ใช้ Modifier-->
+      <!-- <input type="text" name="age" v-model.number="applicant.age" /> -->
+    </div>
+
     <!-- Courses -->
     <div>
       <select name="courses" v-model="applicant.course">
@@ -51,6 +60,7 @@ export default {
         firstName: "",
         lastName: "",
         sex: "male",
+        age: 0,
         course: "react",
       },
     };
@@ -60,6 +70,7 @@ export default {
       this.applicant = {
         firstName: "",
         lastName: "",
+        age: 0,
         sex: "male",
         course: "react",
       };
