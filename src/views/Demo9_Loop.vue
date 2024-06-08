@@ -66,7 +66,7 @@ export default {
       this.course = { title: "", prcie: 0 };
     },
     deleteCourse(ind) {
-      this.dynamicObject.splice(ind, 1); // [splice เหมือนการหยิบออกไปเอาที่เหลือมาประกบกัน] [slice เอาตัวที่หยิบไปเป็น array] [fliter กรองเฉพาะเงื่อนไขที่อยากได้]
+      this.dynamicObject.splice(ind, 1); // [splice เหมือนการหยิบออกไปเอาที่เหลือมาประกบกัน ใช้ได้เลยไม่ต้องเก็บบน variable] [slice เอาตัวที่หยิบไปเป็น array] [fliter กรองเฉพาะเงื่อนไขที่อยากได้]
     },
   },
 };
