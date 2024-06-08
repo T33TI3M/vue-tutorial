@@ -16,3 +16,7 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 })
 export default class HomeView extends Vue {}
 </script>
+
+
+
+//create h1 tag 
